@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body{
+    background: #1f0e30;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+
+    color: #511192;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom:1px solid #ac36db;
+    margin: 30px;
+    padding-bottom: 5px;
+
+}
+
+.rocket a{
+    margin-left: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ac36db;
+}
+.links a{
+    width: 120px;
+    height: 30px;
+    text-decoration: none;
+    margin-right: 30px;
+    color: #ac36db;
+
+    border: 1px solid #170627;
+    padding: 5px;
+
+    transition: 400ms;
+    cursor: pointer;
+}
+
+.links a:hover{
+    background-color: #7a17dda1;
+}
+
+header img{
+    width: 50px;
+    height: 50px;
+}
+
+#wrapper {
+    font-size: 32px;
+    text-align: center;
+    padding: 24px;
+    color: #ad1ae7;
+    opacity: 0.5;
+}
+
+.cards{
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.cards img{
+    width: 235px;
+    height: 150px;
+    margin: 20px;
+}
+
+.card{
+    background-color:#511192;
+    opacity: 0.7;
+}
+
+#starter:hover{
+    border: 2px solid #9027fa;
+    opacity: 1;
+}
+
+#launchbase:hover{
+    border: 2px solid #ff9933;
+    opacity: 1;
+}
+
+#gostack:hover{
+    border: 2px solid #009933;
+    opacity: 1;
+}
+.card_content{
+    font-size: 24px;
+    text-align: center;
+}
+
+.card_content,
+.card_info{
+    padding: 24px;
+    color: white;
+}
+
+.card_info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card_price{
+    background-color: #511192;
+    filter: brightness(90%);
+    padding: 5px 20px;
+    border-radius: 20px;
+    text-align: center;
+}    
+
+/*==== MODAL ====*/
+
+.modal-overlay{
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal{
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    margin: 10vh auto;
+    position: relative;
+}
+.modal .close-modal{
+    color: black;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+}
+
+.modal .maximize-modal{
+    color: black;
+    position: absolute;
+    right: 40px;
+    top: 8px;
+    cursor: pointer;
+}
+
+.modal .minimize-modal{
+    color: black;
+    position: absolute;
+    right: 72px;
+    top: 8px;
+    cursor: pointer;
+}
+
+/*==== MODAL.ACTIVE ====*/
+
+.modal-overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal.maximize{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: absolute;
+}
+
+iframe{
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+}
+
