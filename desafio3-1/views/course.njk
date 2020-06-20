@@ -1,0 +1,43 @@
+{% extends 'layout.njk' %}
+
+{% block head %}
+    <link rel="stylesheet" href="pageCourse.css">
+    <title>{{item.title}}</title>
+{% endblock head %}
+
+<body>
+
+    {% block content %}
+
+        <header>
+            <div class="rocket">
+                <img src="logo-rocketseat.svg" alt="LOGO">
+            </div>
+            <div class="links">
+                <a href="/courses">Courses</a>
+                <a href="https://discordapp.com/invite/gCRAFhc" target="_blank">Community</a>
+                <a href="mailto:oi@rocketseat.com.br" target="_blank">Email</a>
+                <a href="tel:+5547992078767">Phone</a>
+            </div>
+        </header>
+
+        <section class="cards">
+
+            <div class="card" id="{{course.id}}">
+                <div class="card_image-container">
+                    <img src="{{course.image}}" alt="{{course.title}}">
+                </div>
+                <div class="card_content">
+                    <p>{{course.title}}</p>
+                </div>
+                <div class="card_info">
+                    <p>{{course.modules}}</p>
+                    <p class="card_price">{{course.price}}</p>
+                </div>
+            </div>
+
+        </section>
+    {% endblock %}
+
+</body>
+</html>

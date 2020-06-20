@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        {% block head %}
+            <link rel="stylesheet" href="styles.css">
+
+            <title>Errou!</title>
+        {% endblock %}
+
+    </head>
+    <body>
+        <header>
+            <div class="rocket">
+                <img src="logo-rocketseat.svg" alt="LOGO">
+            </div>
+            <div class="links">
+                <a href="/about">About</a>
+                <a href="https://discordapp.com/invite/gCRAFhc" target="_blank">Community</a>
+                <a href="mailto:oi@rocketseat.com.br" target="_blank">Email</a>
+                <a href="tel:+5547992078767">Phone</a>
+            </div>
+        </header>
+        {% block content %}
+            <div class="content">
+                <div class="error-message">
+                    <h1>PÁGINA NÃO ENCONTRADA!</h1>
+                    <p>Acho que você acabou se perdendo 😐</p>
+                </div>
+            </div>
+        {% endblock %}
+    </body>
+</html>

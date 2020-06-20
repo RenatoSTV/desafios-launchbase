@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body{
+    background: #1f0e30;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+
+    color: #511192;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom:1px solid #ac36db;
+    margin: 30px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+
+}
+
+.rocket a{
+    margin-left: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ac36db;
+}
+.links a{
+    width: 120px;
+    height: 30px;
+    text-decoration: none;
+    margin-right: 30px;
+    color: #ac36db;
+
+    border: 1px solid #170627;
+    padding: 5px;
+
+    transition: 400ms;
+    cursor: pointer;
+}
+
+.links a:hover{
+    background-color: #7a17dda1;
+}
+
+header img{
+    width: 50px;
+    height: 50px;
+}
+.cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 640px;
+    height: 400px; 
+    background-color: #511192;
+    opacity: 0.7;
+
+    margin-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.card_image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cards img {
+    width: 235px;
+    height: 150px;
+    margin: 20px;
+  }
+  
+  #starter:hover {
+    border: 2px solid #9027fa;
+    opacity: 1;
+  }
+  
+  #launchbase:hover {
+    border: 2px solid #ff9933;
+    opacity: 1;
+  }
+  
+  #gostack:hover {
+    border: 2px solid #009933;
+    opacity: 1;
+  }
+  .card_content {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .card_content,
+  .card_info {
+    padding: 24px;
+    color: white;
+  }
+  
+  .card_info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .card_price {
+    background-color: #511192;
+    filter: brightness(90%);
+    padding: 5px 20px;
+    border-radius: 20px;
+    text-align: center;
+  }

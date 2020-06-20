@@ -1,0 +1,40 @@
+{% extends 'layout.njk' %}
+
+{% block head %}
+    <link rel="stylesheet" href="styles.css">
+    <title>About</title>
+{% endblock head%}
+
+<body>
+
+    {% block content %}
+
+        <header>
+            <div class="rocket">
+                <img src="logo-rocketseat.svg" alt="LOGO">
+            </div>
+
+            <div class="links">
+                <a href="/courses">Courses</a>
+                <a href="https://github.com/Rocketseat" target="_blank">Github</a>
+                <a href="http://instagram.com/rocketseat_oficial" target="_blank">Instagram</a>
+                <a href="http://fb.com/rocketseat" target="_blank">Facebook</a>
+            </div>
+        </header>
+        <div class="infos">
+            <img src="https://avatars0.githubusercontent.com/u/28929274?s=200&v=4" alt="Rocketseat">
+            <h1>Rocketseat</h1>
+            <p>A Rocketseat é uma plataforma de educação em tecnologia focada no Web Desenvolvimento. Seus 3 pilares são: Prática, Foco e Grupo.</p>
+        </div>
+        <div class="stacks">
+            <ul>
+                <li>JavaScript</li>
+                <li>Nodejs</li>
+                <li>React</li>
+                <li>React Native</li>
+            </ul>
+        </div>
+    {% endblock %}
+
+</body>
+</html>
