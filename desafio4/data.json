@@ -1,0 +1,45 @@
+{
+  "students": [
+    {
+      "avatar_url": "https://images.unsplash.com/photo-1567168539593-59673ababaae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+      "name": "Renato de Souza Teofilo",
+      "email": "renatostv@gmail.com",
+      "birth": 752457600000,
+      "grade": "3EM",
+      "time": "25",
+      "id": 2
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1562693315-23c0b35cacd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+      "name": "Renato de Souza Teofilo",
+      "birth": 1315094400000,
+      "graduation": "doutorado",
+      "type": "Presencial",
+      "subjects": "Web, Css, Html",
+      "created_at": 1592995240205
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1567168539593-59673ababaae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+      "name": "Airton",
+      "birth": 265248000000,
+      "graduation": "mestrado",
+      "type": "Presencial",
+      "subjects": "Física",
+      "created_at": 1592995265589
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+      "name": "Abgail",
+      "birth": 796867200000,
+      "graduation": "superior",
+      "type": "À Distancia",
+      "subjects": "Educação Física, Xadrez ",
+      "created_at": 1592995314788
+    }
+  ]
+}

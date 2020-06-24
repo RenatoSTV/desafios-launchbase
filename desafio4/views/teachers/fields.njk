@@ -1,0 +1,74 @@
+<div class="item">
+    <div>Avatar URL</div>
+    <div>
+        <input 
+            type="url" 
+            name="avatar_url" 
+            placeholder="http://"
+            value="{{teacher.avatar_url}}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Nome</div>
+    <div>
+        <input 
+            type="text" 
+            name="name" 
+            placeholder="Nome do Professor"
+            value="{{teacher.name}}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Data de Nascimento</div>
+    <div>
+        <input 
+            type="date" 
+            name="birth"
+            value="{{teacher.birth}}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Grau de escolaridade</div>
+    <select name="graduation">
+        <option value="medio" {% if teacher.graduation == "medio" %} selected {% endif %}>
+            Ensino Médio Completo
+        </option>
+        <option value="superior" {% if teacher.graduation == "superior" %} selected {% endif %}>
+            Ensino Superior Completo
+        </option>
+        <option value="mestrado" {% if teacher.graduation == "mestrado" %} selected {% endif %}>
+            Mestrado
+        </option>
+        <option value="doutorado" {% if teacher.graduation == "doutorado" %} selected {% endif %}>
+            Doutorado
+        </option>
+    </select>
+</div>
+
+<div class="item">
+    <div>Tipo de aula</div>
+    <div>
+        <span><input type="radio" name="type" value="Presencial" {% if teacher.type == "Presencial" %} checked {% endif %}>Presencial</span>
+        <span><input type="radio" name="type" value="À Distancia" {% if teacher.type == "À Distancia" %} checked {% endif %}>À Distância</span>
+    </div>
+</div>
+
+<div class="item">
+    <div>Área de Atuação</div>
+    <div>
+        <input 
+            type="text" 
+            name="subjects" 
+            placeholder="Separe as matérias lecionadas por vírgula"
+            value="{{teacher.subjects}}"
+        >
+    </div>
+</div>
+
+<button type="submit">Salvar</button>
