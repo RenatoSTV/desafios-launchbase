@@ -21,7 +21,7 @@ exports.show = function(req,res){
 
     const teacher = {
         ...foundTeacher,
-        birth:date(foundTeacher.birth).birthDay,
+        age:age(foundTeacher.birth),
         graduation:graduation(foundTeacher.graduation),
         subjects: foundTeacher.subjects.split(","),
         created_at: new Intl.DateTimeFormat("pt-BR").format(foundTeacher.created_at),
@@ -89,8 +89,8 @@ exports.edit = function(req,res){
     return res.render('teachers/edit', { teacher })
 }
 
-// put
-exports.put = function(req,res){
+// update
+exports.update = function(req,res){
     const { id } = req.body
     let index = 0
 

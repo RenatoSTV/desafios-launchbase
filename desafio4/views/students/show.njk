@@ -8,7 +8,10 @@
     <div class="card">
         <section class="avatar" style="background:url({{student.avatar_url}}) no-repeat center center/cover"></section>
         <section class="details">
-            <h3>Detalhes</h3>
+            <div class="head">
+                <h3>Detalhes</h3>
+                <a href="/students">Voltar</a>
+            </div>
 
             <div class="item">
                 <div>Nome</div>
@@ -22,7 +25,7 @@
 
             <div class="item">
                 <div>Aniversário</div>
-                <div>{{student.birthDay}}</div>
+                <div>{{student.birth}}</div>
             </div>
 
             <div class="item">
@@ -32,7 +35,7 @@
 
             <div class="item">
                 <div>Carga Horária</div>
-                <div>{{student.time}}Horas por semana</div>
+                <div>{{student.time}} Horas por semana</div>
             </div>
 
             <section class="options">

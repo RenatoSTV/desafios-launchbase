@@ -8,6 +8,15 @@
       "grade": "3EM",
       "time": "25",
       "id": 2
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+      "name": "Maria",
+      "email": "maria.joaquina@email.com",
+      "birth": 1065139200000,
+      "grade": "2EM",
+      "time": "7"
     }
   ],
   "teachers": [

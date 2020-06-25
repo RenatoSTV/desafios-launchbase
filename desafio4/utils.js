@@ -12,15 +12,15 @@ module.exports = {
 
         return age
     },
-    graduation:function (graduation){
-        switch(graduation){
+    graduation: function (graduation) {
+        switch (graduation) {
             case ("medio"): return "Ensino médio Completo";
             case ("superior"): return "Ensino Superior Completo";
-            case ("mestrado") : return "Mestrado";
-            case ("doutorado") : return "Doutorado"
+            case ("mestrado"): return "Mestrado";
+            case ("doutorado"): return "Doutorado"
         }
     },
-    date: function(timestamp){
+    date: function (timestamp) {
         const date = new Date(timestamp)
 
         const year = date.getUTCFullYear()
@@ -36,16 +36,16 @@ module.exports = {
         }
 
     },
-    grade: function (grade){
-        switch(grade){
+    grade: function (grade) {
+        switch (grade) {
             case ("5EF"): return "5º ano do ensino fundamental";
             case ("6EF"): return "6º ano do ensino fundamental";
             case ("7EF"): return "7º ano do ensino fundamental";
             case ("8EF"): return "8º ano do ensino fundamental";
             case ("9EF"): return "9º ano do ensino fundamental";
-            case ("1EM") : return "1º ano do ensino médio";
-            case ("2EM") : return "2º ano do ensino médio";
-            case ("3EM") : return "3º ano do ensino médio";
+            case ("1EM"): return "1º ano do ensino médio";
+            case ("2EM"): return "2º ano do ensino médio";
+            case ("3EM"): return "3º ano do ensino médio";
         }
     }
 }

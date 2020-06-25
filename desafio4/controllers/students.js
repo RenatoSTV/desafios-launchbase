@@ -1,19 +1,20 @@
 const fs = require('fs')
 const data = require('../data.json')
-const { age, grade, date } = require('../utils')
+const { age, grade, date,} = require('../utils')
 const Intl = require('intl')
 
 //index
 exports.index =  function (req, res) {
-    for(studentsout in data.students){
-        const students = {
-                ...studentsout,
-                grade:grade(studentsout.grade)
-        }
-        return students
-    }
+    const students = []
 
-    return res.render("students/index", {  students })
+    for (let student of data.students) {
+
+        students.push({
+        ...student,
+        grade: grade(student.grade)
+        })
+    }
+    return res.render("students/index", { students })
 }
 
 //show
@@ -92,8 +93,8 @@ exports.edit = function(req,res){
     return res.render('students/edit', { student })
 }
 
-// put
-exports.put = function(req,res){
+// update
+exports.update = function(req,res){
     const { id } = req.body
     let index = 0
 

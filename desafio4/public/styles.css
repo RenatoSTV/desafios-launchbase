@@ -101,6 +101,22 @@ header {
   padding: 32px;
 }
 
+.details .head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.details .head a{
+  padding: 4px 8px;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+
 .details .item{
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding: 16px 0;
@@ -173,7 +189,6 @@ a.button{
   width: 100%;
   color: white;
   font-size: 16px;
-  
 }
 
 a.button{
@@ -267,10 +282,6 @@ tbody tr td:last-child a,
 }
 
 .table-container thead tr th:last-child,
-td:last-child{
+td{
   text-align: center;
 }
-
-/* input{
-  background-color: #beb3e662;
-} */
