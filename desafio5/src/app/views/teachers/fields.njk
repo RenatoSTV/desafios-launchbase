@@ -27,15 +27,15 @@
     <div>
         <input 
             type="date" 
-            name="birth_date"
-            value="{{teacher.birth_date}}"
+            name="birth"
+            value="{{teacher.birth}}"
         >
     </div>
 </div>
 
 <div class="item">
     <div>Grau de escolaridade</div>
-    <select name="education_level">
+    <select name="educational_level">
         <option value="EM" {% if teacher.graduation == "EM" %} selected {% endif %}>
             Ensino Médio Completo
         </option>

@@ -21,9 +21,9 @@ exports.show = function(req,res){
 
     const teacher = {
         ...foundTeacher,
-        age:age(foundTeacher.birth),
-        graduation:graduation(foundTeacher.graduation),
-        subjects: foundTeacher.subjects.split(","),
+        age:age(foundTeacher.birth_date),
+        education_level:graduation(foundTeacher.education_level),
+        subjects_taught: foundTeacher.subjects_taught.split(","),
         created_at: new Intl.DateTimeFormat("pt-BR").format(foundTeacher.created_at),
     }
 
@@ -46,7 +46,7 @@ exports.post =  function (req, res) {
             return res.send("Please, fill all fields!")
     }
 
-    birth = Date.parse(req.body.birth)
+    birth_date = Date.parse(req.body.birth_date)
     const created_at = Date.now()
 
     let id = 1
@@ -59,7 +59,7 @@ exports.post =  function (req, res) {
     data.teachers.push({
         id,
         ...req.body,
-        birth,
+        birth_date,
         created_at, 
     })
 
@@ -106,7 +106,7 @@ exports.update = function(req,res){
     const teacher = {
         ...foundTeacher,
         ...req.body,
-        birth: Date.parse(req.body.birth),
+        birth_date: Date.parse(req.body.birth_date),
         id: Number(req.body.id)
     }
 

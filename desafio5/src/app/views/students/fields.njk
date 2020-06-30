@@ -1,0 +1,87 @@
+<div class="item">
+    <div>Avatar URL</div>
+    <div>
+        <input 
+            type="url" 
+            name="avatar_url" 
+            placeholder="http://"
+            value="{{student.avatar_url}}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Nome</div>
+    <div>
+        <input 
+            type="text" 
+            name="name" 
+            value="{{student.name}}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Email</div>
+    <div>
+        <input 
+            type="email" 
+            name="email" 
+            value="{{student.email}}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Data de Nascimento</div>
+    <div>
+        <input 
+            type="date" 
+            name="birth"
+            value="{{student.birth}}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Ano Escolar</div>
+    <select name="educational_level">
+        <option value="5EF" {% if student.grade == "5EF" %} selected {% endif %}>
+            5º ano do ensino fundamental
+        </option>
+        <option value="6EF" {% if student.grade == "6EF" %} selected {% endif %}>
+            6º ano do ensino fundamental
+        </option>
+        <option value="7EF" {% if student.grade == "7EF" %} selected {% endif %}>
+            7º ano do ensino fundamental
+        </option>
+        <option value="8EF" {% if student.grade == "8EF" %} selected {% endif %}>
+            8º ano do ensino fundamental
+        </option>
+        <option value="9EF" {% if student.grade == "9EF" %} selected {% endif %}>
+            9º ano do ensino fundamental
+        </option>
+        <option value="1EM" {% if student.grade == "1EM" %} selected {% endif %}>
+            1º ano do ensino médio
+        </option>
+        <option value="2EM" {% if student.grade == "2EM" %} selected {% endif %}>
+            2º ano do ensino médio
+        </option>
+        <option value="3EM" {% if student.grade == "3EM" %} selected {% endif %}>
+            3º ano do ensino médio
+        </option>
+    </select>
+</div>
+
+<div class="item">
+    <div>Carga Horária</div>
+    <div>
+        <input 
+            type="number" 
+            name="time"
+            value="{{student.time}}"
+        >
+    </div>
+</div>
+
+<button type="submit">Salvar</button>
