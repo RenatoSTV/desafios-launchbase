@@ -6,8 +6,8 @@ module.exports = {
         
         db.query(`SELECT *
          FROM  teachers
-        ORDER BY name ASC`, function(err,results){
-            if(err) `DATABASE error! ${err}`
+        `, function(err,results){
+            if(err) throw `DATABASE error! ${err}`
             
             callback(results.rows)
         })
@@ -31,7 +31,7 @@ module.exports = {
         const values = [
             data.avatar_url,
             data.name,
-            date(data.birth).iso,
+            date(data.birth_date).iso,
             data.educational_level,
             data.class_type,
             data.subjects_taught,
@@ -39,7 +39,7 @@ module.exports = {
         ]
 
         db.query(query, values, function(err, results){
-            if(err) `DATABASE error! ${err}`
+            if(err) throw `DATABASE error! ${err}`
             
             callback(results.rows[0])
         })
@@ -61,21 +61,22 @@ module.exports = {
             birth_date=($3),
             educational_level=($4),
             class_type=($5),
-            subjects_taught=($6),
+            subjects_taught=($6)
         WHERE id = $7
         `
 
         const values = [
-            data.avata_url,
+            data.avatar_url,
             data.name,
-            date(data.birth).iso,
+            date(data.birth_date).iso,
             data.educational_level,
             data.class_type,
             data.subjects_taught,
+            data.id
         ]
 
         db.query(query, values, function(err, results){
-            if(err) `DATABASE error! ${err}`
+            if(err) throw `DATABASE error! ${err}`
 
             callback()
         })

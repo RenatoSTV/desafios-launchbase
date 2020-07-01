@@ -160,6 +160,9 @@ header {
   font-size: 12px;
 }
 
+.details select{
+  min-width: 200px;
+}
 /* FORM */
 
 input {
@@ -220,7 +223,7 @@ a.button{
   background-color: lightcoral;
 }
 
-/* INDEX TEACHERS */
+/* INDEX TEACHERS, STUDENTS */
 
 .table-container{
   display: block;

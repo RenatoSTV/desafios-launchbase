@@ -27,7 +27,7 @@
     <div>
         <input 
             type="date" 
-            name="birth"
+            name="birth_date"
             value="{{teacher.birth}}"
         >
     </div>
@@ -36,16 +36,16 @@
 <div class="item">
     <div>Grau de escolaridade</div>
     <select name="educational_level">
-        <option value="EM" {% if teacher.graduation == "EM" %} selected {% endif %}>
+        <option value="EM" {% if teacher.educational_level == "EM" %} selected {% endif %}>
             Ensino Médio Completo
         </option>
-        <option value="ES" {% if teacher.graduation == "ES" %} selected {% endif %}>
+        <option value="ES" {% if teacher.educational_level == "ES" %} selected {% endif %}>
             Ensino Superior Completo
         </option>
-        <option value="M" {% if teacher.graduation == "M" %} selected {% endif %}>
+        <option value="M" {% if teacher.educational_level == "M" %} selected {% endif %}>
             Mestrado
         </option>
-        <option value="D" {% if teacher.graduation == "D" %} selected {% endif %}>
+        <option value="D" {% if teacher.educational_level == "D" %} selected {% endif %}>
             Doutorado
         </option>
     </select>
@@ -54,8 +54,8 @@
 <div class="item">
     <div>Tipo de aula</div>
     <div>
-        <span><input type="radio" name="class_type" value="Presencial" {% if teacher.type == "Presencial" %} checked {% endif %}>Presencial</span>
-        <span><input type="radio" name="class_type" value="À Distancia" {% if teacher.type == "À Distancia" %} checked {% endif %}>À Distância</span>
+        <span><input type="radio" name="class_type" value="Presencial" {% if teacher.class_type == "Presencial" %} checked {% endif %}>Presencial</span>
+        <span><input type="radio" name="class_type" value="À Distancia" {% if teacher.class_type == "À Distancia" %} checked {% endif %}>À Distância</span>
     </div>
 </div>
 

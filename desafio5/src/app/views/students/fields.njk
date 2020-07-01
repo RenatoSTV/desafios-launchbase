@@ -37,7 +37,7 @@
     <div>
         <input 
             type="date" 
-            name="birth"
+            name="birth_date"
             value="{{student.birth}}"
         >
     </div>
@@ -82,6 +82,18 @@
             value="{{student.time}}"
         >
     </div>
+</div>
+
+<div class="item">
+    <div>Professor</div>
+    <select name="teacher">
+
+        {% for teacher in teacherOptions %}
+        <option value="{{teacher.id}}" {% if student.teacher_id == teacher.id %} selected {% endif %}>
+            {{teacher.name}}
+        </option>
+        {% endfor %}
+    </select>
 </div>
 
 <button type="submit">Salvar</button>

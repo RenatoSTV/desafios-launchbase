@@ -6,8 +6,8 @@ module.exports = {
         
         db.query(`SELECT *
         FROM  students
-        ORDER BY name ASC`, function(err,results){
-            if(err) `DATABASE error! ${err}`
+        `, function(err,results){
+            if(err) throw `DATABASE error! ${err}`
 
             callback(results.rows)
         })
@@ -22,8 +22,9 @@ module.exports = {
                 email,
                 birth_date,
                 educational_level,
-                time
-            ) VALUES ($1, $2, $3, $4, $5, $6)
+                time,
+                teacher_id
+            ) VALUES ($1, $2, $3, $4, $5, $6, $7)
             RETURNING id
         `
 
@@ -31,21 +32,23 @@ module.exports = {
             data.avatar_url,
             data.name,
             data.email,
-            date(data.birth).iso,
+            date(data.birth_date).iso,
             data.educational_level,
-            data.time
+            data.time,
+            data.teacher
         ]
 
         db.query(query, values, function(err, results){
-            if(err) `DATABASE error! ${err}`
+            if(err) throw `DATABASE error! ${err}`
             
             callback(results.rows[0])
         })
     },
     find(id, callback) {
-        db.query(`SELECT * 
+        db.query(`SELECT students.*, teachers.name AS teacher_name 
         FROM students 
-        WHERE id = $1`, [id], function(err, results){
+        LEFT JOIN teachers ON (students.teacher_id = teachers.id)
+        WHERE students.id = $1`, [id], function(err, results){
             if(err) throw `DATABASE error! ${err}`
 
             callback(results.rows[0])
@@ -56,25 +59,27 @@ module.exports = {
         UPDATE students SET
             avatar_url=($1),
             name=($2),
-            email=($3)
+            email=($3),
             birth_date=($4),
             educational_level=($5),
-            time=($6)
-        WHERE id = $7
+            time=($6),
+            teacher_id=($7)
+        WHERE id = $8
         `
 
         const values = [
-            data.avata_url,
+            data.avatar_url,
             data.name,
             data.email,
-            date(data.birth).iso,
+            date(data.birth_date).iso,
             data.educational_level,
-            data.time
+            data.time,
+            data.teacher,
+            data.id
         ]
-
+        console.log(data)
         db.query(query, values, function(err, results){
-            if(err) `DATABASE error! ${err}`
-
+            if(err) throw `DATABASE error! ${err}`
             callback()
         })
     },
@@ -84,6 +89,13 @@ module.exports = {
 
             return callback()
 
+        })
+    },
+    teachersSelectOptions(callback){
+        db.query(`SELECT name, id FROM teachers`, function(err, results){
+            if(err) throw `DATABASE error! ${err}`
+
+            callback(results.rows)
         })
     }
 }
