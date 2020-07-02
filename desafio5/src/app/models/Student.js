@@ -77,7 +77,7 @@ module.exports = {
             data.teacher,
             data.id
         ]
-        console.log(data)
+
         db.query(query, values, function(err, results){
             if(err) throw `DATABASE error! ${err}`
             callback()
@@ -93,6 +93,43 @@ module.exports = {
     },
     teachersSelectOptions(callback){
         db.query(`SELECT name, id FROM teachers`, function(err, results){
+            if(err) throw `DATABASE error! ${err}`
+
+            callback(results.rows)
+        })
+    },
+    paginate(params) {
+        const { filter, limit, offset, callback} = params
+
+        let query = "",
+            filterQuery = "",
+            totalQuery = `(
+                SELECT count(*) FROM students
+            ) AS total`
+
+        
+
+        if (filter) {
+
+            filterQuery = `${query}
+            WHERE students.name ILIKE '%${filter}%'
+            OR students.email ILIKE '%${filter}%'
+            `
+
+            totalQuery = `(
+                SELECT count(*) FROM students
+                ${filterQuery}
+            ) as total`
+        }
+
+        query = `
+        SELECT students.*,${totalQuery} 
+        FROM students
+        ${filterQuery}
+        LIMIT $1 OFFSET $2
+        `
+
+        db.query(query, [limit, offset], function(err, results){
             if(err) throw `DATABASE error! ${err}`
 
             callback(results.rows)

@@ -6,12 +6,26 @@
 
 {% block content %}
     <div class="card table-container">
-        <a href="/teachers/create">Novo</a>
+
+        <div class="header">
+        <a class="button" href="/teachers/create">Novo</a>
+        <form action="/teachers?" method="GET">
+            <input 
+                type="text"
+                name="filter"
+                placeholder="Nome ou Acompanhamento"
+                value={{filter}}
+            >
+            <button type="submit">Filtrar</button>
+        </form>
+        </div>
+
         <table width="100%">
             <thead>
                 <tr>
                     <th>Teacher</th>
                     <th>Acompanhamento</th>
+                    <th>Alunos</th>
                     <th>Ação</th>
 
                 </tr>
@@ -23,7 +37,12 @@
                             <span style="background-image: url({{teacher.avatar_url}})"></span>
                             {{teacher.name}}
                         </td>
-                        <td>{{teacher.subjects_taught}}</td>
+                        <td>
+                            {% for subject in teacher.subjects_taught %}
+                                 <span>{{subject}}</span>
+                            {% endfor %}
+                        </td>
+                        <td>{{teacher.total_students}}</td>
                         <td>
                             <a href="/teachers/{{teacher.id}}">ver</a>
                         </td>
@@ -31,5 +50,12 @@
                 {% endfor %}
             </tbody>
         </table>
+
+        <div class="pagination"
+            data-page={{pagination.page}}
+            data-total={{pagination.total}}
+            data-filter={{filter}}
+        ></div>
+
     </div>
 {% endblock content %}
