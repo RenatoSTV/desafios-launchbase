@@ -6,10 +6,7 @@
 
 {% block content %}
     <div class="card">
-        <section 
-        class="avatar"
-        style="background:url({{teacher.avatar_url}}) no-repeat center center/cover" >
-        </section>
+        <section class="avatar" style="background:url({{teacher.avatar_url}}) no-repeat center center/cover"></section>
         <section class="details">
             <div class="head">
                 <h3>Detalhes</h3>
@@ -49,14 +46,14 @@
                     <a href="/teachers/{{ teacher.id }}/edit" class="button">Editar</a>
                 </div>
                 <div class="option">
-                <form id="form-delete" action="/teachers?_method=DELETE" method="post">
-                    
-                    <input type="hidden" name="id" value="{{teacher.id}}">
-                    <button type="submit">Deletar</button>
-                    
-                </form>
+                    <form id="form-delete" action="/teachers?_method=DELETE" method="post">
+
+                        <input type="hidden" name="id" value="{{teacher.id}}">
+                        <button type="submit">Deletar</button>
+
+                    </form>
                     {% include 'teachers/confirm.njk' %}
                 </div>
-        </section>
-    </div>
-{% endblock content %}
+            </section>
+        </div>
+    {% endblock content %}
