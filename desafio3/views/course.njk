@@ -1,7 +1,7 @@
 {% extends 'layout.njk' %}
 
 {% block head %}
-    <link rel="stylesheet" href="pageCourse.css">
+    <link rel="stylesheet" href="/pageCourse.css">
     <title>{{item.title}}</title>
 {% endblock head %}
 
@@ -23,7 +23,7 @@
 
         <section class="cards">
 
-            <div class="card" id="{{course.id}}">
+            <div class="plate" id="{{course.id}}">
                 <div class="card_image-container">
                     <img src="{{course.image}}" alt="{{course.title}}">
                 </div>
@@ -34,8 +34,11 @@
                     <p>{{course.modules}}</p>
                     <p class="card_price">{{course.price}}</p>
                 </div>
-            </div>
 
+            </div>
+            <div class="redirect">
+                <a href="https://rocketseat.com.br/{{course.id}}">More informations</a>
+            </div>
         </section>
     {% endblock %}
 

@@ -5,7 +5,7 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
 
-  color: #511192;
+  color: #ffffffab;
 }
 
 header {
@@ -31,7 +31,7 @@ header {
   text-decoration: none;
   margin-right: 30px;
   color: #ac36db;
-  
+
   padding: 5px;
 
   transition: 400ms;
@@ -71,7 +71,7 @@ header img {
 }
 
 .card {
-  background-color: #511192;
+  background-color: #000000;
   opacity: 0.7;
 }
 
@@ -116,6 +116,7 @@ header img {
 }
 
 .infos {
+  width: 940px;
   text-align: center;
   justify-content: center;
   margin: 0 auto;
@@ -140,9 +141,17 @@ header img {
   font-size: 24px;
 }
 
+.stacks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .stacks li {
   font-size: 20px;
+  font-weight: bold;
   margin-bottom: 5px;
+  list-style: none;
 }
 
 /* === ERROR PAGE === */
@@ -168,4 +177,25 @@ header img {
 
   align-items: center;
   justify-content: center;
+
+  color: #1f0e30;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+
+  background-color: #7707e7;
+}
+
+footer p {
+  margin: 0;
+  margin: 10px auto;
+  color: white;
 }

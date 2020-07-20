@@ -22,7 +22,7 @@ server.get("/courses", function (req, res) {
     return res.render("courses", { items: courses })
 })
 
-server.get("/:id", function (req, res) {
+server.get("/courses/:id", function (req, res) {
     const id = req.params.id
 
     const course = courses.find(function(course){
